@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+    <div class="result-title panel-heading">
+        <h3 class="panel-title">
+            <a ng-href="{{ result.page }}" target="_blank">{{ result.title }}</a>
+        </h3>
+    </div>
+    <div class="result-body panel-body">
+        <p>
+            <img ng-src="{{ result.thumbnail.source }}" class="img-responsive"></img> {{ result.body.description[0] }}
+        </p>
+    </div>
+
+</div>

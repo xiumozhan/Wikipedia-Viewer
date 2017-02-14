@@ -29,15 +29,24 @@
             </div>
 
             <div class="result-viewer">
-                <ul ng-repeat="result in results">
-                    <li>{{ result }}</li>
-                </ul>
+                <div ng-repeat="result in results">
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
+                            <wiki-result result="result"></wiki-result>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
 
     <script src="js/index.js"></script>
+    <script src="js/resultController.js"></script>
+    <script src="js/wikiController.js"></script>
+    <script src="directives/wikiResult.js"></script>
 
 </body>
 
