@@ -28,7 +28,7 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
                 exlimit: 'max',
                 gsrsearch: $scope.searchString
             }
-        }
+        };
         $http(request).then(function(data) {
             var results = data.data.query.pages;
             angular.forEach(results, function(value, key) {
