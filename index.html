@@ -16,8 +16,8 @@
 <body>
 
     <body ng-app="wikiApp">
-        <div ng-controller="wikiController">
-            <div class="container-fluid container-center text-center">
+        <div ng-controller="wikiController" class="view-container">
+            <div class="container-fluid container-center text-center" ng-class="{'main-page-mode': mainPageMode(), 'search-mode': searchMode()}">
                 <div class="random-viewer">
                     <p><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click here for a random article</a></p>
                 </div>

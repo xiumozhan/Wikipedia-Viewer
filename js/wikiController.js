@@ -1,9 +1,11 @@
 wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
     $scope.results = [];
+    $scope.isShowingResult = false;
 
     $scope.cleanResults = function() {
         $scope.searchString = '';
         $scope.results = [];
+        $scope.isShowingResult = false;
     };
 
     $scope.search = function() {
@@ -36,7 +38,22 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
                     page: page + value.pageid,
                     thumbnail: value.thumbnail
                 })
-            })
+            });
+            $scope.isShowingResult = true;
         });
+    };
+
+    $scope.mainPageMode = function() {
+        if($scope.isShowingResult) {
+            return false;
+        }
+        return true;
+    };
+
+    $scope.searchMode = function() {
+        if($scope.isShowingResult) {
+            return true;
+        }
+        return false;
     };
 }]);
