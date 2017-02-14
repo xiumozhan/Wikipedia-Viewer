@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+}
+
+.input-row {
+    margin-bottom: 20px;
+}
+
+.submit-row {
+    margin-bottom: 20px;
+}
+
+.right-addon {
+    position: relative;
+}
+
+.right-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    cursor: pointer;
+    right: 15px;
+}
+
+.right-addon input {
+    padding-right: 20px;
+}

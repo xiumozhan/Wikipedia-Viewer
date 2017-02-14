@@ -2,11 +2,12 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
     $scope.results = [];
 
     $scope.cleanResults = function() {
+        $scope.searchString = '';
         $scope.results = [];
     };
 
     $scope.search = function() {
-        $scope.cleanResults();
+        $scope.results = [];
         var api = 'https://en.wikipedia.org/w/api.php?prop=pageimages|pageterms&';
         var page = 'https://en.wikipedia.org/?curid=';
         var request = {
