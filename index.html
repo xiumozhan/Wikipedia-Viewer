@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wikipedia Viewer</title>
+
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+
+
+</head>
+
+<body>
+
+    <body ng-app="wikiApp">
+        <div ng-controller="wikiController">
+            <div class="container-fluid container-center text-center">
+                <div class="random-viewer">
+                    <p><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click here for a random article</a></p>
+                </div>
+                <div class="search-viewer">
+                    <form ng-submit="search()">
+                        <input ng-model="searchString" input="text">
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="result-viewer">
+                <ul ng-repeat="result in results">
+                    <li>{{ result }}</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
