@@ -30,15 +30,18 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
             }
         };
         $http(request).then(function(data) {
-            var results = data.data.query.pages;
-            angular.forEach(results, function(value, key) {
-                $scope.results.push({
-                    title: value.title,
-                    body: value.terms,
-                    page: page + value.pageid,
-                    thumbnail: value.thumbnail
-                })
-            });
+            if(data.data.query !== undefined) {
+                var results = data.data.query.pages;
+                angular.forEach(results, function(value, key) {
+                    $scope.results.push({
+                        title: value.title,
+                        body: value.terms,
+                        page: page + value.pageid,
+                        thumbnail: value.thumbnail
+                    })
+                });
+            }
+
             $scope.isShowingResult = true;
         });
     };
@@ -56,4 +59,11 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
         }
         return false;
     };
+
+    $scope.noMatchingResult = function() {
+        if($scope.searchMode() && $scope.results.length === 0) {
+            return true;
+        }
+        return false;
+    }
 }]);
