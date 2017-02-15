@@ -5,7 +5,8 @@ wikiApp.directive('wikiResult', function() {
         replace: true,
         controller: 'resultController',
         scope: {
-            result: '='
+            result: '=',
+            cleaning: '='
         }
     }
 })

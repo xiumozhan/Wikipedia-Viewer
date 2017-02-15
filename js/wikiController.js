@@ -2,12 +2,21 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
     $scope.results = [];
     $scope.isShowingResult = false;
     $scope.noMatchingResult = false;
+    $scope.cleaning = false;
 
     $scope.cleanResults = function() {
         $scope.searchString = '';
         $scope.results = [];
         $scope.isShowingResult = false;
     };
+
+    $scope.$watch('results.length', function(newLength, oldLength) {
+        if(newLength === 0 && oldLength > 0) {
+            $scope.cleaning = true;
+        } else {
+            $scope.cleaning = false;
+        }
+    });
 
     $scope.search = function() {
 
