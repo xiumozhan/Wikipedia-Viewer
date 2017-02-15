@@ -7,4 +7,8 @@ wikiApp.controller('resultController', ['$scope', function($scope) {
             source: defaultThumbnail
         };
     }
+
+    $scope.emptyDescription = function() {
+        return $scope.result.body.description === undefined;
+    };
 }]);

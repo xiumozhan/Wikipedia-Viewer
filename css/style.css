@@ -1,9 +1,24 @@
 * {
     margin: 0;
+    font-weight: 400;
+}
+
+.main-container {
+    background-image: url(http://wallarthd.com/wp-content/uploads/2015/10/Wikipedia-3d-Hd-Wallpaper.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .view-container {
     position: relative;
+}
+
+.random-viewer {
+    color: #000000;
+}
+
+.random-viewer a {
+    decoration: none;
 }
 
 .input-row {
@@ -35,4 +50,35 @@
 
 .search-mode {
     margin-top: 40px;
+}
+
+.panel {
+    position: relative;
+    padding-left: 8.33%;
+}
+
+.panel .thumbnail-container {
+    position: absolute;
+    left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 7%;
+    max-height: 100%;
+}
+
+.panel .thumbnail-container img {
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.result-container {
+    opacity: 0.85;
+    background: transparent;
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s;
 }

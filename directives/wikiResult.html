@@ -1,16 +1,19 @@
-<div class="row">
-    <div class="col-sm-1">
-        <img ng-src="{{ result.thumbnail.source }}" class="img-thumbnail"></img>
-    </div>
-    <div class="col-sm-11 panel panel-default">
+<div class="row result-container">
+    <div class="col-sm-12 panel panel-default">
+        <div class="thumbnail-container">
+            <img ng-src="{{ result.thumbnail.source }}" class="img-responsive img-thumbnail"></img>
+        </div>
         <div class="result-title panel-heading">
             <h3 class="panel-title">
             <a ng-href="{{ result.page }}" target="_blank">{{ result.title }}</a>
         </h3>
         </div>
         <div class="result-body panel-body">
-            <p>
+            <p ng-show="emptyDescription() === false">
                 {{ result.body.description[0] }}
+            </p>
+            <p ng-show="emptyDescription() === true">
+                &nbsp;
             </p>
         </div>
 
