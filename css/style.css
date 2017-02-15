@@ -1,6 +1,7 @@
 * {
     margin: 0;
     font-weight: 400;
+    font-family: 'Droid Serif', serif;
 }
 
 .main-container {
@@ -20,11 +21,12 @@
 }
 
 .input-row {
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .submit-row {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .submit-row button {
