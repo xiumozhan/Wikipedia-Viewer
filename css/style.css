@@ -13,12 +13,10 @@
     position: relative;
 }
 
-.random-viewer {
+.random-viewer p a {
     color: #000000;
-}
-
-.random-viewer a {
-    decoration: none;
+    font-size: 150%;
+    text-decoration: none;
 }
 
 .input-row {
@@ -27,6 +25,10 @@
 
 .submit-row {
     margin-bottom: 20px;
+}
+
+.submit-row button {
+    font-size: 150%;
 }
 
 .right-addon {
