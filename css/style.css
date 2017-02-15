@@ -2,6 +2,7 @@
     margin: 0;
     font-weight: 400;
     font-family: 'Droid Serif', serif;
+    box-sizing: border-box;
 }
 
 .main-container {
@@ -80,9 +81,17 @@
 .result-container {
     opacity: 0.85;
     background: transparent;
-    -webkit-animation: fadein 2s;
-    -moz-animation: fadein 2s;
-    -ms-animation: fadein 2s;
-    -o-animation: fadein 2s;
-    animation: fadein 2s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+.result-container .removing {
+    -webkit-animation: fadeOut 0.2s;
+    -moz-animation: fadeOut 0.2s;
+    -ms-animation: fadeOut 0.2s;
+    -o-animation: fadeOut 0.2s;
+    animation: fadeOut 0.2s;
 }

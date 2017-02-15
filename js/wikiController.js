@@ -1,6 +1,7 @@
 wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
     $scope.results = [];
     $scope.isShowingResult = false;
+    $scope.noMatchingResult = false;
 
     $scope.cleanResults = function() {
         $scope.searchString = '';
@@ -9,6 +10,7 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
     };
 
     $scope.search = function() {
+
         $scope.results = [];
         var api = 'https://en.wikipedia.org/w/api.php?prop=pageimages|pageterms&';
         var page = 'https://en.wikipedia.org/?curid=';
@@ -29,6 +31,7 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
                 gsrsearch: $scope.searchString
             }
         };
+
         $http(request).then(function(data) {
             if(data.data.query !== undefined) {
                 var results = data.data.query.pages;
@@ -41,8 +44,12 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
                     })
                 });
             }
-
             $scope.isShowingResult = true;
+            if($scope.results.length === 0) {
+                $scope.noMatchingResult = true;
+            } else {
+                $scope.noMatchingResult = false;
+            }
         });
     };
 
@@ -60,10 +67,4 @@ wikiApp.controller('wikiController', ['$scope', '$http', '$sce', function($scope
         return false;
     };
 
-    $scope.noMatchingResult = function() {
-        if($scope.searchMode() && $scope.results.length === 0) {
-            return true;
-        }
-        return false;
-    }
 }]);
